@@ -65,7 +65,7 @@
 		margin-bottom: 1rem;
 	}
 
-  .example .explain::before{
+  /* .example .explain::before{
     display: flex;
     position: absolute;
     content: 'Copiar código da função';
@@ -83,7 +83,7 @@
     backdrop-filter: blur(1px);
     -webkit-backdrop-filter: blur(1px);
 		pointer-events: none; 
-  }
+  } */
 
 
 	.example .explain:hover::before {

@@ -5615,7 +5615,7 @@
     </script>
 
     <script  type="module" defer>
-        import { wbu_state_city, wbu_cep_finder } from './wbu.js';
+        import { wbu_state_city, wbu_cep_finder, wbu_phone_mask } from './wbu.js';
         wbu_state_city({
             statesId: "estados",
             citysId: "cidades",
@@ -5639,6 +5639,7 @@
             stateId: "state_select",
             isSelect: true
         })
+        window.wbu_phone_mask = wbu_phone_mask
     </script>
 
   </head>
@@ -5773,6 +5774,33 @@
                     isSelect: se o campo é um select ou não (opcional)
                 </p>
                
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="cep">
+                <div class="input-group" x-data>
+                    <label>Cep</label>
+                    <input x-mask="999999-99"  placeholder=""/>
+                </div>
+                <div class="input-group" x-data>
+                    <label>CPF</label>
+                    <input x-mask="999.999.999-99" placeholder=""/>
+                </div>
+                <div class="input-group" x-data>
+                    <label>CNPJ</label>
+                    <input x-mask="99.999.999/9999-99"  placeholder=""/>
+                </div>
+
+                <div class="input-group" x-data>
+                    <label>Telefone</label>
+                    <input x-mask:dynamic="wbu_phone_mask" placeholder=""/>
+                </div>
+
+            </div>
+            <div class="explain">
+                <h4 class="">Máscaras Alpine.js</h4>   
+                <p>Use o  plugin x-mask do Alpine para adicionar máscaras aos inputs</p>         
             </div>
         </div>
     </main>

@@ -97,3 +97,11 @@ export function wbu_cep_finder(options={cepId, addressId, districtId, cityId, st
     })
 }
 
+export function wbu_phone_mask(input){
+    const digits = input.replace(/\D/g, '')
+
+    if (digits.length > 10) {
+    return '(99) 99999-9999'
+    }
+    return '(99) 9999-9999'
+}
